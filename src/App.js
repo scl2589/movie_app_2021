@@ -6,13 +6,21 @@ class App extends React.Component{
   state = {
     count: 0
   };
+
   // 하단은 JS 코드이다.
+  // state shouldn't be updated directly. 
+  // Instead, there's setState() - it allows React to let it know that it needs to refresh
+  // setSTate를 호출할 때마다 react는 새로운 state를 render한다. 
+  // 그래서 되도록이면 setState를 사용하지 않는다.
   add = () => {
-    console.log("Add")
+    console.log("Add");
+    this.setState(current =>({count: current.count + 1}))
   };
   minus = () => {
     console.log("Minus");
+    this.setState(current => ({count: current.count - 1}))
   }
+
   //리액트는 자동적으로 class component의 render method를 실행한다.
   render() {
     return (
