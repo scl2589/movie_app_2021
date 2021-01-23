@@ -1,8 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 
 class App extends React.Component{
+  constructor(props) {
+    super(props);
+    console.log("hello")
+  }
   state = {
     count: 0
   };
@@ -20,9 +23,19 @@ class App extends React.Component{
     console.log("Minus");
     this.setState(current => ({count: current.count - 1}))
   }
+  componentDidMount() {
+    console.log("component rendered");
+  }
+  componentDidUpdate() {
+    console.log("I just updated")
+  }
+  componentWillUnmount() {
+    console.log("Good Bye, cruel world!")
+  }
 
   //리액트는 자동적으로 class component의 render method를 실행한다.
   render() {
+    console.log("render")
     return (
       <div>
         <h1>The number is {this.state.count}</h1>
@@ -50,3 +63,18 @@ export default App;
 
 // prop-types 설치
 // - prop-types가 할일은 내가 전달받은 props가 내가 원하는 props인지 확인해 준다.
+
+// 라이프사이클
+// - mounting
+//   - constructor: when the component mounts, show on screen, 
+//   - static getDerivedStateFromProps()
+//   - render()
+//   - componentDidMount: component did mount for the first time
+// - updating
+//   - component is caused by user
+//   - static getDerivedStateFromProps()
+//   - shouldComponentUpdate() 
+//   - render()
+//   - componentDidUpdate()
+// - unmounting - component is going to die (change the page or replace the component using state)
+//   - componentWillUnmount()
