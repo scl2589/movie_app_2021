@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+
+
+// javascript와 html의 조합을 jsx이라고 한다.
 ReactDOM.render(
   <React.StrictMode>
+    {/* React는 1개의 component만 render한다. */}
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('potato')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
