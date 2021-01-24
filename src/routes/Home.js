@@ -50,7 +50,7 @@ class Home extends React.Component{
   }
 }
 
-export default App;
+export default Home;
 
 // map의 사용법 
 // const friends = ["dal", "mark", "lynn", "japan guy"]
