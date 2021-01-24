@@ -13,7 +13,7 @@ function App() {
     {/* /about doesn't has to have a same name with about */}
     <Route path="/" exact={true} component={Home}/>
     <Route path="/about" component={About}/>
-    <Route path="/movie-detail" component={Detail}/>
+    <Route path="/movie/:id" component={Detail}/>
   </HashRouter>
   )
 }
