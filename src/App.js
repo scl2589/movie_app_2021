@@ -1,15 +1,18 @@
-import React from 'react'
-
+import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component{
   state = {
     isLoading: true,
     movies: []
   }
+  // you have to wait for the function to process
+  getMovies = async() => {
+    //await = wait for axios to be finished
+    const movies = await axios.get("https://yts-proxy.nomadcoders1.now.sh/list_movies.json");
+  }
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({isLoading: false})
-    }, 6000)
+    this.getMovies();
   }
   render() {
     const { isLoading }  = this.state;
